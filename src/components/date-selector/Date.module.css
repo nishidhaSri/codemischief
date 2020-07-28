@@ -1,0 +1,55 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.date {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dateDiv {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  color: white;
+  background: #5032d5;
+  flex-direction: column;
+  font-family: Poppins;
+  border-radius: 15px;
+}
+
+.dateDiv > span {
+  width: fit-content;
+  margin: 1px auto;
+}
+
+.dateDiv > span:first-child {
+  font-size: 27px;
+  font-weight: bolder;
+}
+
+.arrows {
+  height: fit-content;
+  margin: auto 0;
+  font-size: 22px;
+  color: #5032d5;
+}
+
+.info,
+.more {
+  font-family: Poppins;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.info {
+  color: #02a51d;
+}
+
+.more {
+  color: #707070;
+}

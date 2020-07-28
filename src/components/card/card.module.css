@@ -1,0 +1,339 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.hospital {
+  display: flex;
+  /* min-height: 150px; */
+  border-radius: 15px;
+  box-shadow: 0px 8px 11px #00000029;
+  padding: 20px;
+}
+
+.image {
+  height: 200px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.heading {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+}
+
+.megaTitle {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+}
+
+.title {
+  color: #707070;
+  font-size: 25px;
+  font-family: Sofia Pro;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+
+.titleAnime {
+  position: relative;
+  animation: header 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.subText {
+  display: flex;
+  margin: 5px 15px;
+}
+
+.subText > span {
+  font-size: 8px;
+  font-family: Sofia Pro;
+}
+
+.logos {
+  display: flex;
+}
+
+.logo {
+  width: 60px;
+  height: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.availableBeds {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid #02a51d;
+  border-radius: 10px;
+}
+
+.availableBeds > span:first-child {
+  color: #02a51d;
+}
+
+.availableBeds > span:last-child {
+  font-size: 10px;
+  color: #02a51d;
+}
+
+.description {
+  font-family: Sofia Pro;
+  font-size: 15px;
+  margin: 15px;
+  margin-right: 35px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.beds {
+  margin-top: 20px;
+  flex-direction: column;
+  /* max-width: 800px; */
+  /* max-height: 0px; */
+}
+
+.bedsAnime {
+  overflow-y: hidden;
+  position: relative;
+  animation-name: bedsAnime;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.beds1 {
+  margin-top: 20px;
+}
+
+.singlebed {
+  display: flex;
+  min-height: 150px;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.gold,
+.silver,
+.bronze {
+  width: 180px;
+}
+
+.gold {
+  border-right: 20px solid gold;
+}
+
+.silver {
+  border-right: 20px solid silver;
+}
+
+.bronze {
+  border-right: 20px solid #81701a;
+}
+
+.arrowLeft {
+  font-size: 25px;
+  color: #5032d5;
+  margin: 15px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.megaHeader {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.goldDiv,
+.silverDiv,
+.bronzeDiv {
+  width: 18px;
+  height: 120px;
+  margin-right: 10px;
+  position: relative;
+  animation: div 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.goldDiv {
+  background: gold;
+}
+
+.silverDiv {
+  background-color: silver;
+}
+
+.bronzeDiv {
+  background-color: #81701a;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.header span:last-child {
+  font-size: 15px;
+}
+
+.fullGallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery {
+  display: flex;
+}
+
+.leftImages {
+  width: 25%;
+  padding: 5px 20px;
+  border-right: 1px solid;
+}
+
+.leftImages > img {
+  width: 100%;
+}
+
+.imageBig {
+  width: 80%;
+  height: 75%;
+  margin: auto 20px;
+  position: relative;
+  animation-name: imageBigAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.buttonAnime {
+  background: #5032d5;
+  margin: 20px auto;
+  position: relative;
+  animation-name: buttonAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+/* .totalBeds {
+  max-height: 0;
+  transition: max-height 1s ease-out;
+  overflow: hidden;
+} */
+
+@keyframes bedsAnime {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 10000px;
+  }
+}
+
+@keyframes div {
+  from {
+    top: 45px;
+    left: 100px;
+  }
+  to {
+    top: 0px;
+    left: 0px;
+  }
+}
+
+@keyframes header {
+  from {
+    left: 60px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes imageBigAnime {
+  from {
+    top: -95px;
+    left: -95px;
+  }
+  to {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes buttonAnime {
+  from {
+    top: -85%;
+    left: 35%;
+  }
+  to {
+    top: 0;
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 1115px) {
+  .logos {
+    flex-direction: column;
+  }
+  .logo,
+  .availableBeds {
+    margin: 10px;
+  }
+  .description {
+    margin-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .heading {
+    flex-direction: column;
+  }
+  .logos {
+    flex-direction: row;
+  }
+  .megaTitle {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .hospital {
+    flex-direction: column;
+  }
+  .megaTitle {
+    width: 100%;
+  }
+  .subText > span {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
+  .singlebed {
+    flex-direction: column;
+  }
+  .imageBig {
+    display: none;
+  }
+  .leftImages {
+    width: 100%;
+    border: none;
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .heading {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 11px #00000029;
+  padding: 20px;
+}
+
+.heading span {
+  font-family: Poppins;
+  color: #6f6f6f;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.barContainer {
+  display: flex;
+  height: 140px;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+.totalBar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 120px;
+  /* justify-content: center; */
+  align-items: center;
+  margin-right: auto;
+}
+
+.bar {
+  position: relative;
+  width: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
+
+.active {
+  position: absolute;
+  background: #5032d5;
+  width: 8px;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.number {
+  font-family: Poppins;
+  color: #6f6f6f;
+  font-size: 12px;
+  font-weight: bolder;
+}

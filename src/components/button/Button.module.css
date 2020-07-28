@@ -1,0 +1,12 @@
+.button {
+  min-width: 180px;
+  height: 40px;
+  background: #0c065e;
+  border-radius: 10px;
+  border: none;
+  font-family: Poppins;
+  font-size: 18px;
+  color: #fff;
+  text-transform: capitalize;
+  cursor: pointer;
+}
