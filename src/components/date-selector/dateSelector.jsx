@@ -77,6 +77,7 @@ const DateSelector = () => {
         <i
           onClick={getPreviousDate}
           className={`fa fa-arrow-circle-o-left ${styles.arrows}`}
+          style={{ cursor: "pointer" }}
         ></i>
         <div className={styles.dateDiv}>
           <span>{selectedDate !== null ? selectedDate.getDate() : ""}</span>
@@ -87,6 +88,7 @@ const DateSelector = () => {
         <i
           onClick={getNextDate}
           className={`fa fa-arrow-circle-o-right ${styles.arrows}`}
+          style={{ cursor: "pointer" }}
         ></i>
       </div>
       <div className={styles.info}>36 Beds available</div>
