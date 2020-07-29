@@ -11,7 +11,7 @@ const Card = (props) => {
   const [showDescription, setShowDescription] = useState(false);
   const [showAnime, setShowAnime] = useState(false);
   const [type, setType] = useState("");
-  const { children } = props;
+  const { children, price } = props;
   const handleShowBeds = () => {
     setShowBeds(!showBeds);
     setShowAnime(true);
@@ -21,6 +21,9 @@ const Card = (props) => {
     e.target.alt !== undefined && setType(e.target.alt);
     setShowAnime(false);
   };
+
+  const arr = children.beds.filter((bed) => bed.price <= price);
+
   return (
     <React.Fragment>
       {children ? (
@@ -77,39 +80,48 @@ const Card = (props) => {
                 >
                   <div className={styles.title}>Select a type</div>
                   <div className={`${styles.totalbeds} `}>
-                    {children.beds.map((bed) => (
-                      <div key={bed.id} className={styles.singlebed}>
-                        <img
-                          src={image3}
-                          alt={bed.type}
-                          className={`${styles.image} ${
-                            bed.type === "gold"
-                              ? styles.gold
-                              : bed.type === "silver"
-                              ? styles.silver
-                              : styles.bronze
-                          }`}
-                          onClick={handleShowDescription}
-                        />
-                        <div className={styles.description}>
-                          Irure aliqua reprehenderit mollit do irure deserunt
-                          consequat minim enim.Dolore amet in labore
-                          veniam.Irure officia fugiat dolore reprehenderit
-                          consectetur dolore do fugiat.
-                          <div>Price: Rs. {bed.price}</div>
+                    {arr.length > 0 ? (
+                      arr.map((bed) => (
+                        <div key={bed.id} className={styles.singlebed}>
+                          <img
+                            src={image3}
+                            alt={bed.type}
+                            className={`${styles.image} ${
+                              bed.type === "gold"
+                                ? styles.gold
+                                : bed.type === "silver"
+                                ? styles.silver
+                                : styles.bronze
+                            }`}
+                            onClick={handleShowDescription}
+                          />
+                          <div className={styles.description}>
+                            Irure aliqua reprehenderit mollit do irure deserunt
+                            consequat minim enim.Dolore amet in labore
+                            veniam.Irure officia fugiat dolore reprehenderit
+                            consectetur dolore do fugiat.
+                            <div style={{ fontWeight: 700 }}>
+                              Price: Rs. {bed.price}
+                            </div>
+                          </div>
+                          <img
+                            onClick={handleShowDescription}
+                            src={image2}
+                            alt={bed.type}
+                            className={styles.logo}
+                          />
+                          <Button
+                            text="Book Now"
+                            style={{ background: "#5032D5" }}
+                          />
                         </div>
-                        <img
-                          onClick={handleShowDescription}
-                          src={image2}
-                          alt={bed.type}
-                          className={styles.logo}
-                        />
-                        <Button
-                          text="Book Now"
-                          style={{ background: "#5032D5" }}
-                        />
+                      ))
+                    ) : (
+                      <div>
+                        No beds for that price, change the price to see more
+                        options or try again later
                       </div>
-                    ))}
+                    )}
                   </div>
                 </div>
               )}

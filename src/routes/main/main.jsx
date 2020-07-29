@@ -16,7 +16,7 @@ import DateSelector from "../../components/date-selector/dateSelector";
 
 const Main = () => {
   const [showLogin, setShowLogin] = useState(false);
-  const [priceInputValue, setPriceInputValue] = useState(0);
+  const [priceInputValue, setPriceInputValue] = useState(10);
   const [cityValue, setCityValue] = useState("Mumbai");
   const [responsive, setResponsive] = useState(false);
   const [filters, setFilters] = useState(false);
@@ -38,7 +38,7 @@ const Main = () => {
     7: "1100",
     8: "1200",
     9: "1300",
-    10: "1400+",
+    10: "1400",
   };
 
   const showFilters = () => {
@@ -220,7 +220,9 @@ const Main = () => {
           {hospitals
             .filter((hospital) => hospital.city === cityValue)
             .map((hospital) => (
-              <Card key={hospital.id}>{hospital}</Card>
+              <Card price={getPricingData()} key={hospital.id}>
+                {hospital}
+              </Card>
             ))}
         </div>
       </div>
